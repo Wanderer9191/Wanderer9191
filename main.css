@@ -1,33 +1,95 @@
 ﻿ body {
     font: 11pt "Lucida Sans Unicode", "Lucida Grande", Sans-Serif; /* Рубленый шрифт текста */
     margin: 0; /* Отступы на странице */
+	background-image: 
+	linear-gradient(135deg, transparent 84px, #d95b43 84px, #d95b43 100px, #ecd078 100px, #ecd078 106px, #c02942 106px, #c02942 120px, #ecd078 121px, #ecd078 127px, #542437 127px, #542437 142px, #ecd078 142px, #ecd078 148px, #53777a 148px, #53777a 163px, #ecd078 163px, #ecd078 168px, #d95b43 169px), 
+	linear-gradient(135deg, #d95b43 15px, #d95b43, #ecd078 15px, #ecd078 21px, #c02942 21px, #c02942 36px, #ecd078 36px, #ecd078 42px, #542437 42px, #542437 57.5px, #ecd078 57px, #ecd078 63px, #53777a 63px, #53777a 78px, #ecd078 78px, #ecd078 84px, transparent 84px, transparent 99px);
+	background-size: 120px 120px;
    }
+   
    h1 {
     font-size: 30px; /* Размер шрифта */
     margin: 0; /* Убираем отступы */
     color: black; /* Цвет текста */
    }
+   
    h2 {
-    margin-top: 0; /* Убираем отступ сверху */
+    margin-top: 0 px; /* Убираем отступ сверху */
    }
+   
    #header { /* Верхний блок */
     background: #AFCDE7; /* Цвет фона */
     padding: 10px; /* Поля вокруг текста */
-	border: 4px double gray;
-	border-radius: 5px;
 	transparent: 20%;
+	box-shadow: 0 2px 14px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
    }
+   
    #sidebar { /* Левая колонка */
     float: left; /* Обтекание справа */
     border: 1px solid #333; /* Параметры рамки вокруг */
     width: 20%; /* Ширина колонки */
     padding: 5px; /* Поля вокруг текста */
     margin: 10px 10px 20px 5px; /* Значения отступов */
+	box-shadow: 2px 2px 8px rgba(0,0,0,.1);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background: white;
    }
+	
+	#sidebar h3 {
+  font-size: 16px;
+  color: rgba(0,0,0,.6);
+  margin: 0 0 10px;
+  padding: 0 5px;
+  position: relative;
+	}
+	#sidebar h3:after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #AFCDE7;
+  position: absolute;
+  right: 5px;
+  bottom: 2px;
+  box-shadow: -8px -8px #AFCDE7, 0 -8px #AFCDE7, -8px 0 #AFCDE7;
+	}
+	
+#sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; 
+  border-top: 1px solid rgba(0,0,0,.3);
+	}
+	
+#sidebar li {margin: 12px 0 0 0px;}
+
+#sidebar a {
+  text-decoration: none;
+  display: block;  
+  font-size: 13px;
+  color: rgba(0,0,0,.6);
+  padding: 5px;
+  position: relative;
+  transition: .3s linear;
+}
+
+#sidebar a:after {
+  font-family: FontAwesome;
+  position: absolute;
+  right: 5px;
+  color: white;
+  transition: .2s linear;
+}
+
+#sidebar a:hover {
+  background: #333;
+  color: white;
+}
+
    #content { /* Правая колонка */
     margin: 10px 5px 20px 25%; /* Значения отступов */
     padding: 5px; /* Поля вокруг текста */
     border: 1px solid #333; /* Параметры рамки */
+	background: #DEF2F1;
    }
    #footer { /* Нижний блок */
     background: #333; /* Цвет фона */
@@ -67,3 +129,143 @@ background: #D8E6F3;
 th:first-child, td:first-child {
 text-align: left;
 }
+
+* {
+   margin: 0;
+   box-sizing: border-box;
+}
+
+.post-wrap {
+   max-width: 1120px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+.post-item {
+   padding: 15px;
+   cursor: pointer;
+}
+.post-item * {
+   transition: .3s linear;
+   
+}
+.item-content {
+   background: #413D4C;
+   padding: 40px;
+}
+.item-icon {
+   margin-bottom: 20px;
+}
+.item-icon:before {
+   content: "";
+   font-family: FontAwesome;
+   color: #F09EA3;
+   font-size: 50px;
+   line-height: 1;
+}
+.item-icon.photo:before {
+   content: "\f030";
+}
+.item-icon.video:before {
+   content: "\f03d";
+}
+.item-icon.gift:before {
+   content: "\f06b";
+}
+.item-icon.group:before {
+   content: "\f0c0";
+}
+.item-icon.tree:before {
+   content: "\f1bb";
+}
+.item-icon.anchor:before {
+   content: "\f13d";
+}
+.post-item:hover .item-icon, .post-item:hover .item-body h3, .post-item:hover .item-body p {
+   transform: translateY(-8px);
+}
+.item-body {
+   color: #F5E2CD;
+   font-size: 14px;
+}
+.item-body h3 {
+   font-weight: 500;
+   margin-bottom: 15px;
+   transition-delay: .05s;
+}
+.item-body p {
+   transition-delay: .1s;
+}
+.item-footer {
+   padding-top: 15px;
+}
+.link {
+   text-decoration: none;
+   display: inline-block;
+   overflow: hidden;
+   position: relative;
+   padding-right: 30px;
+   font-size: 12px;
+   text-transform: uppercase;
+   font-weight: 600;
+   color: #F5E2CD;
+}
+.link:before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   bottom: 0;
+   height: .125rem;
+   margin: auto;
+   background: #F09EA3;
+   transform: scaleX(.2);
+   transform-origin: left center;
+   z-index: 0;
+   transition: .6s cubic-bezier(.6, .01, 0, 1);
+}
+.link span {
+   display: inline-block;
+   position: relative;
+   transform: translateX(-200%);
+   transition: .6s cubic-bezier(.6, .01, 0, 1);
+}
+.post-item:hover .link span {
+   transform: translateX(0%);
+}
+.post-item:hover .link:before {
+   transform-origin: right center;
+}
+@media (min-width: 768px) {
+   .post-item {
+      flex-basis: 50%;
+      flex-shrink: 0;
+   }
+}
+@media (min-width: 960px) {
+   .post-item {
+      flex-basis: 33.333333333%;
+   }
+}
+	
+	
+
+H1 {
+  font-size: 50px;
+  font-weight: normal;
+  cursor: pointer;
+  text-shadow: -8px -8px 0 hsl(200,100%,35%),
+               -7px -7px 0 hsl(200,100%,55%),
+               -6px -6px 0 hsl(200,100%,60%),
+               -5px -5px 0 hsl(200,100%,65%),
+               -4px -4px 0 hsl(200,100%,70%),
+               -3px -3px 0 hsl(200,100%,75%),
+               -2px -2px 0 hsl(200,100%,80%),
+               -1px -1px 0 hsl(200,100%,85%),
+               0 0 0 hsl(200,100%,95%);
+  color: transparent;
+  transition: all 1s;
+  }
+\
